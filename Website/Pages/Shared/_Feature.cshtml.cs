@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Website
 {
-    public class IndexModel : PageModel
+    public class _FeatureModel : PageModel
     {
         public void OnGet()
         {
