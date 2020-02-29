@@ -1047,21 +1047,21 @@ main#main {
 }
 
 body.fullscreendark #main > section#home {
-    background-image: url("../img/Website_Background.jpg");
+    background-image: url("../img/Website_Background_3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 body.fullscreenlight #main > section#home {
-    background-image: url("../img/Website_Background.jpg");
+    background-image: url("../img/Website_Background_3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 body.fullscreenbgimage #main > section#home {
-    background-image: url("../img/Website_Background.jpg");
+    background-image: url("../img/Website_Background_3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1079,7 +1079,7 @@ body.fullscreenbgimage #main>section#home:after {
 }
 
 body.bgimage #main > section#home {
-    background-image: url("../img/Website_Background.jpg");
+    background-image: url("../img/Website_Background_3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -2020,13 +2020,13 @@ body.blog {
   overflow: auto;
 }
 
-body.blog .container-fluid.page-title {
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-image: radial-gradient(#ffffff, #69E8F4);
-    padding: 0;
-    margin-bottom: 60px;
-}
+    body.blog .container-fluid.page-title {
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-image: url("../img/Website_Background_3.jpg");
+        padding: 0;
+        margin-bottom: 60px;
+    }
 
 body.blog .container-fluid.page-title .content-banner {
   background-color: rgba(0, 0, 0, .8);

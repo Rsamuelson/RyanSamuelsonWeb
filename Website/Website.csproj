@@ -12,11 +12,17 @@
     <Content Remove="Pages\Privacy.cshtml" />
     <Content Remove="wwwroot\istanbul-personal-portfolio\blog-post.html" />
     <Content Remove="wwwroot\istanbul-personal-portfolio\blog.html" />
+    <Content Remove="wwwroot\istanbul-personal-portfolio\img\500x500_image.jpg" />
     <Content Remove="wwwroot\istanbul-personal-portfolio\index-dark.html" />
+    <Content Remove="wwwroot\istanbul-personal-portfolio\index-image-overlay.html" />
     <Content Remove="wwwroot\istanbul-personal-portfolio\index-left-image-dark.html" />
     <Content Remove="wwwroot\istanbul-personal-portfolio\index-left-image-light.html" />
     <Content Remove="wwwroot\istanbul-personal-portfolio\index-video-dark.html" />
     <Content Remove="wwwroot\istanbul-personal-portfolio\index-video-light.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\istanbul-personal-portfolio\img\500x500_image.jpg" />
   </ItemGroup>
 
   <ItemGroup>
