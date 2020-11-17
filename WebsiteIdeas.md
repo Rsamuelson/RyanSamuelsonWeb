@@ -6,3 +6,4 @@
 1. Implement games (snake, 2048, 2D games, Pac-Man, possible 3D game with Unreal Engine)
 1. private and public chatrooms with email notifications
 1. link to github with icon in social profiles section on about me page
+1. remake website with Blazer
