@@ -1,11 +1,21 @@
 ﻿using Application.Common.Interfaces;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace Persistence
 {
     public class RsDbContext : DbContext, IRsDbContext
     {
-        public DbSet<Email> Emails { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public RsDbContext(DbContextOptions options) : base(options) { }
+
+        public DbSet<Email> Emails { get; set; }
+        public DbSet<Counter> Counters { get; set; }
+
+
+        protected internal void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
     }
 }
