@@ -1,5 +1,5 @@
-﻿using Application.Common.TestUtilties;
-using Application.Emails.Notifications;
+﻿using Application.Emails.Notifications;
+using Common.TestUtilities;
 using MediatR;
 using Moq;
 using System.Threading;

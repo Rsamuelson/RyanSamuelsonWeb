@@ -1,5 +1,5 @@
-﻿using Application.Common.TestUtilties;
-using Application.Emails.Commands;
+﻿using Application.Emails.Commands;
+using Common.TestUtilities;
 using FluentAssertions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

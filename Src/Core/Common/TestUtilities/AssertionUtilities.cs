@@ -3,7 +3,7 @@ using FluentAssertions.Specialized;
 using System;
 using System.Threading.Tasks;
 
-namespace Application.Common.TestUtilties
+namespace Common.TestUtilities
 {
     public static class AssertionUtilities
     {

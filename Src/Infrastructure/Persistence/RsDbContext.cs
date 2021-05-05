@@ -12,7 +12,6 @@ namespace Persistence
         public DbSet<Email> Emails { get; set; }
         public DbSet<Counter> Counters { get; set; }
 
-
         protected internal void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

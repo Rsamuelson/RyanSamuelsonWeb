@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 
-namespace Application.Common.TestUtilties
+namespace Common.TestUtilities
 {
     public static class RandomStringUtilities
     {
         private const string AlphaCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private const string NumericCharacters = "0123456789";
 
-        public static string RandomAlphaNumericString(int length)
+        public static string RandomAlphaNumericString(int length = 10)
         {
             var random = new Random();
 
@@ -19,7 +19,7 @@ namespace Application.Common.TestUtilties
             );
         }
 
-        public static string RandomAlphaString(int length)
+        public static string RandomAlphaString(int length = 10)
         {
             var random = new Random();
 
@@ -30,7 +30,7 @@ namespace Application.Common.TestUtilties
             );
         }
 
-        public static string RandomNumericString(int length)
+        public static string RandomNumericString(int length = 10)
         {
             var random = new Random();
 
