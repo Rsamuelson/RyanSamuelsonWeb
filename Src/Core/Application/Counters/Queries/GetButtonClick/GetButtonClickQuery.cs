@@ -1,10 +1,12 @@
 ﻿using Application.Common.Interfaces;
 using Application.Common.TestUtilities;
+using Application.Counters.Exceptions;
+using Common.TestUtilities;
 using Domain.Enums;
 using Domain.Models;
 using FluentAssertions;
 using MediatR;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -24,37 +26,40 @@ namespace Application.Counters.Queries.GetButtonClick
 
             public async Task<int> Handle(GetButtonClickQuery request, CancellationToken cancellationToken = default)
             {
-                var counter = await _rsDbContext.Counters.FindAsync(new object[] { (int)CounterId.ButtonClicks }, cancellationToken);
+                var counter = await _rsDbContext.Counters.FirstOrDefaultAsync(c => c.CounterId == (int)CounterId.ButtonClicks, cancellationToken);
+
+                if (counter == null) throw new CounterNotFoundExcpetion((int)CounterId.ButtonClicks);
 
                 return counter.Count;
             }
         }
     }
 
-    public class GetButtonClickQueryHandlerTests : IClassFixture<CommandQueryTestFixture>, IDisposable
+    public class GetButtonClickQueryHandlerTests
     {
         private readonly IRsDbContext _rsDbContext;
         private GetButtonClickQuery.GetButtonClickQueryHandler _handler;
 
-        public GetButtonClickQueryHandlerTests(CommandQueryTestFixture commandQueryTestFixture)
+        public GetButtonClickQueryHandlerTests()
         {
-            _rsDbContext = commandQueryTestFixture.Context;
+            _rsDbContext = new CommandQueryTestFixture().Context;
             _handler = new GetButtonClickQuery.GetButtonClickQueryHandler(_rsDbContext);
         }
 
-        public void Dispose()
-        {
-            _rsDbContext.Dispose();
-        }
-
         [Fact]
-        public async Task Hander_returnsButtonClickCount()
+        public void Hander_WhenCounterDoesNotExistInContext_ThrowsCounterNotFoundExcpetion() =>
+            AssertionUtilities.AssertAsyncMethodThrows<CounterNotFoundExcpetion>(_handler.Handle(new GetButtonClickQuery()));
+
+        [Theory]
+        [InlineData(int.MaxValue)]
+        [InlineData(int.MinValue)]
+        public async Task Hander_returnsButtonClickCount(int testValue)
         {
-            var counter = new Counter() { CounterId = (int)CounterId.ButtonClicks, Count = int.MaxValue };
+            var counter = new Counter() { CounterId = (int)CounterId.ButtonClicks, Count = testValue };
             _rsDbContext.Counters.Add(counter);
             await _rsDbContext.SaveChangesAsync();
 
-            (await _handler.Handle(new GetButtonClickQuery())).Should().Be(counter.Count);
+            (await _handler.Handle(new GetButtonClickQuery())).Should().Be(testValue);
         }
     }
 }
