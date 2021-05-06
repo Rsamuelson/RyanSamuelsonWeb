@@ -28,18 +28,7 @@
             <div class="sidebar-header">
                 <h3 class="sidebar-title">Ryan Samuelson</h3>
             </div>
-
-            <ul>
-                <li class="menu-item">
-                    <a href="#" class="menu-link"><span class="menu-title">Dashbaord</span></a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">Projects</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">About</a>
-                </li>
-            </ul>
+            <partial name="_Tier1Nav.cshtml">
         </nav>
 
         <div id="content">
@@ -56,6 +45,8 @@
                 </div>
             </footer>
         </div>
+
+        <partial name="_LayoutScripts" />
         @RenderSection("Scripts", required: false)
     </div>
 </body>

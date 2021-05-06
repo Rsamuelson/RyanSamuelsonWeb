@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Counter";
+}
+
+<h1>Counter</h1>
+
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-outline-primary" id="Click-Me-Buttton" data-url="@Url.Action("AddButtonClick","Home")">Click Me</button>
+        <input id="Button-Count-Input" data-url="@Url.Action("GetButtonClicks","Home")" disabled />
+    </div>
+</div>
+
+@section scripts {
+    <environment names="Development">
+        <script type="text/javascript" src="~/js/buttonClick.js" asp-append-version="true"></script>
+    </environment>
+}
