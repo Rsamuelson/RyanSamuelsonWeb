@@ -1,5 +1,5 @@
 # All About Ryan Samuelson
-This is a project for any and everything that I want to do with ASP.NET solution
+This is a project for any and everything that I want to do with ASP.NET solution. Welcome to my test space!!!
 
 ## Ideas for new website:
 1. (Bootstrap) Moveable Tiles with small apps inside (weather app and so on), like a BirdDogHR landing page.
