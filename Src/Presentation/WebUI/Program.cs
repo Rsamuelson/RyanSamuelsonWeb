@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Persistence.Extensions;
 using Serilog;
 using System;
 using System.Threading.Tasks;
@@ -22,7 +21,7 @@ namespace WebUI
                 {
                     var serviceProvider = scope.ServiceProvider;
                     var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
-                    await DatabaseMigrationsExtenstions.RunDatebaseMigrationsAsync(loggerFactory, serviceProvider);
+                    //await DatabaseMigrationsExtenstions.RunDatebaseMigrationsAsync(loggerFactory, serviceProvider);
                 }
 
                 await host.RunAsync();
