@@ -7,8 +7,13 @@
     <title>@ViewBag.title</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon.png">
+
     <!-- Custom Stylesheet -->
-    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/plugins/nestable/css/nestable.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/plugins/nouislider/nouislider.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/plugins/sweetalert/css/sweetalert.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/plugins/toastr/css/toastr.min.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/css/style.css" rel="stylesheet" asp-append-version="true">
 </head>
 <body>
     <partial name="_Preloader.cshtml" />
@@ -36,5 +41,7 @@
     </div>
 
     <partial name="_LayoutScripts.cshtml" />
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
