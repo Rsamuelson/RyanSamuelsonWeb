@@ -24,11 +24,6 @@ namespace WebUI.Controllers
             return View();
         }
 
-        public IActionResult Counter()
-        {
-            return View();
-        }
-
         public async Task<IActionResult> GetButtonClicks(CancellationToken cancellationToken = default)
         {
             return Json(new { clicks = await _mediator.Send(new GetButtonClickQuery(), cancellationToken) });
@@ -56,10 +51,6 @@ namespace WebUI.Controllers
         [Fact]
         public void Index_GET_ReturnsViewResult() =>
             _controller.Index().Should().BeOfType<ViewResult>();
-
-        [Fact]
-        public void Counter_GET_ReturnsViewResult() =>
-            _controller.Counter().Should().BeOfType<ViewResult>();
 
         [Theory]
         [InlineData(int.MaxValue)]
