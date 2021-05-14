@@ -39,4 +39,9 @@
     <ProjectReference Include="..\..\Infrastructure\Persistence\Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Templates\quixlab\themes\quixlab\plugins\jqvmap\js\maps\" />
+    <Folder Include="Templates\quixlab\themes\quixlab\plugins\summernote\css\" />
+  </ItemGroup>
+
 </Project>
