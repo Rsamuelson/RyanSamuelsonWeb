@@ -1,5 +1,6 @@
-﻿using Domain.Enums;
+﻿using Domain.Constants;
 using Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace Persistence.Seed.RequiredSeeds
@@ -8,8 +9,9 @@ namespace Persistence.Seed.RequiredSeeds
     {
         internal static async Task SeedCountersIfEmpty(RsDbContext dbContext)
         {
-            if (await dbContext.Counters.FindAsync(CounterId.ButtonClicks) == null)
-                dbContext.Counters.Add(new Counter() { CounterId = (int)CounterId.ButtonClicks, Count = 0 });
+            var buttonClicksCounter = await dbContext.Counters.FirstOrDefaultAsync(c => c.Name == CounterNames.ButtonClicks);
+            if (buttonClicksCounter == null)
+                dbContext.Counters.Add(new Counter() { Name = CounterNames.ButtonClicks, Count = 0 });
         }
     }
 }

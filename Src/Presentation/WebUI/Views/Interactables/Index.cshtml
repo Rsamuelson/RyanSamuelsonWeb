@@ -1,0 +1,34 @@
+﻿@using MediatR
+@using Application.Counters.Queries.GetButtonClick
+@using WebUI.Components.Shared
+
+@inject IMediator Mediator
+
+@{
+    ViewBag.title = "Interactables";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h4 class="d-inline">Interactables</h4>
+        <p>Have fun and <strong>click</strong> stuff.</p>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" id="SpecialButtonClicks">@await Mediator.Send(new GetButtonClickQuery())</h5>
+                        <h6 class="card-text text-muted">Number of Special Button Clicks with <strong>Java Script</strong></h6>
+                        <a id="SpecialButtonId" class="btn btn-outline-primary">Special Button</a>
+                    </div>
+                </div>
+            </div>
+            <component type="typeof(SpecialButtonClickComponent)" render-mode="ServerPrerendered" />
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/js/custom/specialButtonClicks.js" asp-append-version="true"></script>
+} 

@@ -1,5 +1,24 @@
-﻿@{
-    ViewBag.title = "Test";
- }
+﻿@using MediatR
+@using Application.Counters.Queries.GetButtonClick
 
-Hello World!
+@inject IMediator Mediator
+
+@{
+    ViewBag.title = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-3">
+        <div class="card card-widget">
+            <div class="card-body gradient-1">
+                <div class="media">
+                    <span class="card-widget__icon"><i class="fad fa-mouse-pointer"></i></i></span>
+                    <div class="media-body">
+                        <h2 class="card-widget__title">@await Mediator.Send(new GetButtonClickQuery())</h2>
+                        <h5 class="card-widget__subtitle">Special Button Clicks</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

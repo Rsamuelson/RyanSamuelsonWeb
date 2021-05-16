@@ -2,7 +2,7 @@
 using Application.Common.TestUtilities;
 using Application.Counters.Exceptions;
 using Common.TestUtilities;
-using Domain.Enums;
+using Domain.Constants;
 using Domain.Models;
 using FluentAssertions;
 using MediatR;
@@ -26,9 +26,9 @@ namespace Application.Counters.Queries.GetButtonClick
 
             public async Task<int> Handle(GetButtonClickQuery request, CancellationToken cancellationToken = default)
             {
-                var counter = await _rsDbContext.Counters.FirstOrDefaultAsync(c => c.CounterId == (int)CounterId.ButtonClicks, cancellationToken);
+                var counter = await _rsDbContext.Counters.FirstOrDefaultAsync(c => c.Name == CounterNames.ButtonClicks, cancellationToken);
 
-                if (counter == null) throw new CounterNotFoundExcpetion((int)CounterId.ButtonClicks);
+                if (counter == null) throw new CounterNotFoundExcpetion(null);
 
                 return counter.Count;
             }
@@ -55,7 +55,7 @@ namespace Application.Counters.Queries.GetButtonClick
         [InlineData(int.MinValue)]
         public async Task Hander_returnsButtonClickCount(int testValue)
         {
-            var counter = new Counter() { CounterId = (int)CounterId.ButtonClicks, Count = testValue };
+            var counter = new Counter() { Name = CounterNames.ButtonClicks, Count = testValue };
             _rsDbContext.Counters.Add(counter);
             await _rsDbContext.SaveChangesAsync();
 

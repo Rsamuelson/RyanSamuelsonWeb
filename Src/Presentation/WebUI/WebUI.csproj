@@ -9,14 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\style.css" />
-    <Content Remove="wwwroot\css\style.css.map" />
-    <Content Remove="wwwroot\js\custom.min.js" />
-    <Content Remove="wwwroot\js\gleek.js" />
-    <Content Remove="wwwroot\js\settings.js" />
-    <Content Remove="wwwroot\js\styleSwitcher.js" />
+    <Compile Remove="logs\**" />
+    <Content Remove="logs\**" />
+    <EmbeddedResource Remove="logs\**" />
+    <None Remove="logs\**" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.0.0" />
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
@@ -47,20 +44,4 @@
     <ProjectReference Include="..\..\Infrastructure\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Persistence\Persistence.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Templates\quixlab\themes\quixlab\plugins\jqvmap\js\maps\" />
-    <Folder Include="Templates\quixlab\themes\quixlab\plugins\summernote\css\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\css\style.css" />
-    <None Include="wwwroot\css\style.css.map" />
-    <None Include="wwwroot\images\favicon.png" />
-    <None Include="wwwroot\js\custom.min.js" />
-    <None Include="wwwroot\js\gleek.js" />
-    <None Include="wwwroot\js\settings.js" />
-    <None Include="wwwroot\js\styleSwitcher.js" />
-  </ItemGroup>
-
 </Project>

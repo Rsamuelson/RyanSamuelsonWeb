@@ -10,8 +10,9 @@ namespace Persistence.Configurations
         {
             builder.HasKey(c => c.CounterId);
 
-            builder.Property(c => c.Count)
-                .IsRequired();
+            builder.Property(c => c.CounterId).ValueGeneratedNever();
+            builder.Property(c => c.Count).IsRequired();
+            builder.Property(c => c.Name).IsRequired();
         }
     }
 }

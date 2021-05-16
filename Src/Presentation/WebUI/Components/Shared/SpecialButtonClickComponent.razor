@@ -1,0 +1,35 @@
+﻿@using Application.Counters.Queries.GetButtonClick;
+@using Application.Counters.Commands.AddButtonClick;
+@using MediatR
+@using System.Threading
+@using System.Threading.Tasks
+
+<div class="col-md-6 col-lg-3">
+    <div class="card">
+        <div class="card-body text-center">
+            <h5 class="card-title">@_buttonClicks</h5>
+            <h6 class="card-text text-muted">Number of Special Button Clicks With <strong>Blazor</strong> component</h6>
+            <button class="btn btn-outline-primary" @onclick="AddButtonClick">Special Button</button>
+        </div>
+    </div>
+</div>
+
+@code{
+    [Inject]
+    private IMediator mediator { get; set; }
+
+    private int _buttonClicks;
+    private readonly CancellationTokenSource _cancellationTokenSource = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _buttonClicks = await mediator.Send(new GetButtonClickQuery(), _cancellationTokenSource.Token);
+    }
+
+    private async Task AddButtonClick()
+    {
+        await mediator.Send(new AddButtonClickCommand(), _cancellationTokenSource.Token);
+
+        _buttonClicks = await mediator.Send(new GetButtonClickQuery(), _cancellationTokenSource.Token);
+    }
+}

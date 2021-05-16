@@ -13,6 +13,7 @@ namespace Persistence
             using (var dbContext = new RsDbContext(serviceProvider.GetRequiredService<DbContextOptions<RsDbContext>>()))
             {
                 await CounterSeed.SeedCountersIfEmpty(dbContext);
+                dbContext.SaveChanges();
             }
         }
 

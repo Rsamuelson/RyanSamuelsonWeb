@@ -37,6 +37,8 @@ namespace WebUI
             services.AddApplication();
             services.AddInfrastructure();
             services.AddPersistence(Configuration);
+
+            services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +68,8 @@ namespace WebUI
                 );
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapBlazorHub();
             });
         }
     }

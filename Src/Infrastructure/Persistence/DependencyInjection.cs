@@ -12,7 +12,7 @@ namespace Persistence
         {
             var databaseGuid = Guid.NewGuid().ToString();
             services.AddDbContext<RsDbContext>(options =>
-                options.UseSqlite(
+                options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")
                     .Replace("%CONTENTROOTPATH%", Environment.CurrentDirectory)
                     .Replace("%GUID%", databaseGuid),
