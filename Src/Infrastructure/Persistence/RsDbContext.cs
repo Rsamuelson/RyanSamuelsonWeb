@@ -11,6 +11,7 @@ namespace Persistence
 
         public DbSet<Email> Emails { get; set; }
         public DbSet<Counter> Counters { get; set; }
+        public DbSet<IpAddress> IpAddresses { get; set; }
 
         protected internal void OnModelCreating(ModelBuilder modelBuilder)
         {

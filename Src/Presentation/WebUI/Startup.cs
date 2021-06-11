@@ -2,10 +2,12 @@ using Application;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Persistence;
+using WebUI.ActionFilterAttributes;
 
 namespace WebUI
 {
@@ -34,11 +36,17 @@ namespace WebUI
             }
 #endif
 
+            //Web Services
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+
+            //Required Servies
             services.AddApplication();
             services.AddInfrastructure();
             services.AddPersistence(Configuration);
 
             services.AddServerSideBlazor();
+
+            services.AddTransient<SaveIpAddressFilter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,7 +2,7 @@
 
 namespace WebUI.Controllers
 {
-    public class UIComponent : Controller
+    public class UIComponent : BaseController
     {
         public IActionResult Accordion()
         {

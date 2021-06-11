@@ -23,8 +23,4 @@
 		<ProjectReference Include="..\..\Core\Application\Application.csproj" />
 		<ProjectReference Include="..\..\Core\Domain\Domain.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Seed\SampleData\" />
-	</ItemGroup>
 </Project>

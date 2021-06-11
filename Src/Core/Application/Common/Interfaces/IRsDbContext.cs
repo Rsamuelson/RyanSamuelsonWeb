@@ -9,6 +9,7 @@ namespace Application.Common.Interfaces
     {
         DbSet<Counter> Counters { get; set; }
         DbSet<Email> Emails { get; set; }
+        DbSet<IpAddress> IpAddresses { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
         void Dispose();

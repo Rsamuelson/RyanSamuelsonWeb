@@ -10,7 +10,7 @@ using Xunit;
 
 namespace WebUI.Controllers
 {
-    public class InteractablesController : Controller
+    public class InteractablesController : BaseController
     {
         private readonly IMediator _mediator;
 

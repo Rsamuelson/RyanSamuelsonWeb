@@ -6,7 +6,7 @@ using System;
 
 namespace Persistence
 {
-    public static class DependencyInjection
+    public static class PersistenceDependencyInjection
     {
         public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {

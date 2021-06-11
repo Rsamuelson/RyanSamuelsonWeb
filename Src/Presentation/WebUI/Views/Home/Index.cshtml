@@ -1,5 +1,6 @@
 ﻿@using MediatR
 @using Application.Counters.Queries.GetButtonClick
+@using Application.IpAddresses.Queries.GetTotalIpAddressCount
 
 @inject IMediator Mediator
 
@@ -16,6 +17,19 @@
                     <div class="media-body">
                         <h2 class="card-widget__title">@await Mediator.Send(new GetButtonClickQuery())</h2>
                         <h5 class="card-widget__subtitle">Special Button Clicks</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="card card-widget">
+            <div class="card-body gradient-2">
+                <div class="media">
+                    <span class="card-widget__icon"><i class="fad fa-eye"></i></i></span>
+                    <div class="media-body">
+                        <h2 class="card-widget__title">@await Mediator.Send(new GetTotalIpAddressCountQuery())</h2>
+                        <h5 class="card-widget__subtitle">Total IP Addresses Visited</h5>
                     </div>
                 </div>
             </div>

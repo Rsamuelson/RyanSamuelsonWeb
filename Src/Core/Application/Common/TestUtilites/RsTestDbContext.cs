@@ -10,5 +10,6 @@ namespace Application.Common.TestUtilities
 
         public DbSet<Counter> Counters { get; set; }
         public DbSet<Email> Emails { get; set; }
+        public DbSet<IpAddress> IpAddresses { get; set; }
     }
 }
