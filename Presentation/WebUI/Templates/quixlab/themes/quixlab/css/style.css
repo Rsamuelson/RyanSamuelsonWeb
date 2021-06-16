@@ -30,7 +30,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 .gradient-2, .dropdown-mega-menu .ext-link.link-3 a {
   background-image: linear-gradient(230deg, #fc5286, #fbaaa2); }
 
-.gradient-3, .dropdown-mega-menu .ext-link.link-2 a, .header-right .icons .user-imgnav-labelactivity {
+.gradient-3, .dropdown-mega-menu .ext-link.link-2 a, .header-right .icons .user-img .activity {
   background-image: linear-gradient(230deg, #ffc480, #ff763b); }
 
 .gradient-4, .sidebar-right .nav-tabs .nav-item .nav-link.active::after, .sidebar-right .nav-tabs .nav-item .nav-link.active span i::before {
@@ -14122,7 +14122,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 [data-sibebarbg="color_1"] .nk-sidebar .metismenu {
   background-color: #fff; }
   [data-sibebarbg="color_1"] .nk-sidebar .metismenu > li {
-    color: #7571f9; }
+    color: #27394F; }
     [data-sibebarbg="color_1"] .nk-sidebar .metismenu > li ul a {
       color: #76838f; }
 

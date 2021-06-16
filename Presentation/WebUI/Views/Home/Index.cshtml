@@ -1,0 +1,52 @@
+﻿@using MediatR
+@using Application.Counters.Queries.GetButtonClick
+@using Application.IpAddresses.Queries.GetTotalIpAddressCount
+
+@inject IMediator Mediator
+
+@{
+    ViewBag.title = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="card gradient-4 gradient-3-shadow">
+            <div class="card-body">
+                <h3 class="card-title text-white">Special Button Clicks</h3>
+                <div class="d-inline-block">
+                    <h2 class="text-white">@await Mediator.Send(new GetButtonClickQuery())</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card gradient-3 gradient-4-shadow">
+            <div class="card-body">
+                <h3 class="card-title text-white">Total IP Addresses Visited</h3>
+                <div class="d-inline-block">
+                    <h2 class="text-white">@await Mediator.Send(new GetTotalIpAddressCountQuery())</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card gradient-1 gradient-2-shadow">
+            <div class="card-body">
+                <h3 class="card-title text-white">Total IP Addresses Visited</h3>
+                <div class="d-inline-block">
+                    <h2 class="text-white">@await Mediator.Send(new GetTotalIpAddressCountQuery())</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card gradient-2 gradient-1-shadow">
+            <div class="card-body">
+                <h3 class="card-title text-white">Total IP Addresses Visited</h3>
+                <div class="d-inline-block">
+                    <h2 class="text-white">@await Mediator.Send(new GetTotalIpAddressCountQuery())</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

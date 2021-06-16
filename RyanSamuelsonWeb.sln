@@ -5,21 +5,21 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{85D10A13-11AE-42CC-BA49-D9D46519CE58}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Src\Infrastructure\Infrastructure\Infrastructure.csproj", "{AD757323-3AF5-4EA6-9BB9-792A175D83B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure\Infrastructure.csproj", "{AD757323-3AF5-4EA6-9BB9-792A175D83B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Src\Infrastructure\Persistence\Persistence.csproj", "{13C43955-C34A-423F-A630-F0D8E748A78B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Infrastructure\Persistence\Persistence.csproj", "{13C43955-C34A-423F-A630-F0D8E748A78B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{102DEDB1-903D-4E93-A4AD-61A0BC59F109}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Src\Core\Application\Application.csproj", "{2F8A8321-FDE5-4A34-B5E5-C3FF8EF6CDB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Core\Application\Application.csproj", "{2F8A8321-FDE5-4A34-B5E5-C3FF8EF6CDB6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Src\Core\Common\Common.csproj", "{E453D115-B3F0-4265-8C5A-2E96497ACF01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Core\Common\Common.csproj", "{E453D115-B3F0-4265-8C5A-2E96497ACF01}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Src\Core\Domain\Domain.csproj", "{74145C61-4DB5-4C90-8A5B-DB3CEEA5DFED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Core\Domain\Domain.csproj", "{74145C61-4DB5-4C90-8A5B-DB3CEEA5DFED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{2B6F044D-A78A-485F-BC76-91A8D1C6653A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI", "Src\Presentation\WebUI\WebUI.csproj", "{92629095-05A1-45F7-AE06-CBBC5FDF6AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI", "Presentation\WebUI\WebUI.csproj", "{92629095-05A1-45F7-AE06-CBBC5FDF6AD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
